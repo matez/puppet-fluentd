@@ -1,5 +1,5 @@
 <source>
-<% @config.each do |key, val| -%>
+<% @config.sort_by {|k,v| k}.each do |key, val| -%>
     <%= key -%> <%= val %>
 <% end -%>
 </source>

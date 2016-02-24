@@ -1,8 +1,8 @@
 <filter <%= @pattern %>>
-<% @config.each do |key, val| -%>
+<% @config.sort_by {|k,v| k}.each do |key, val| -%>
     <%- if val.is_a?( Hash ) -%>
         <<%= key -%>>
-        <%- val.each do |subkey, subval| -%>
+        <%- val.sort_by {|k,v| k}.each do |subkey, subval| -%>
             <%= subkey -%> <%= subval %>
         <%- end -%>
         </<%= key %>>

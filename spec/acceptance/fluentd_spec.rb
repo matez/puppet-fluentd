@@ -6,7 +6,7 @@ RSpec.describe 'fluentd' do
 
     # Run it twice and test for idempotency
     apply_manifest(manifest, catch_failures: true)
-    expect(apply_manifest(manifest, catch_failures: true).exit_code).to be_zero
+    apply_manifest(manifest, catch_changes: true)
   end
 
   # test package
