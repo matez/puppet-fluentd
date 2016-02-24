@@ -2,8 +2,8 @@
 <% @config.each do |key, val| -%>
     <%- if val.is_a?( Hash ) -%>
         <<%= key -%>>
-        <%- val.each do |key, val| -%>
-            <%= key -%> <%= val %>
+        <%- val.each do |subkey, subval| -%>
+            <%= subkey -%> <%= subval %>
         <%- end -%>
         </<%= key %>>
     <%- elsif val.is_a?( Array ) -%>
